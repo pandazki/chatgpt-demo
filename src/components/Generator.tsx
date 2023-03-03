@@ -14,17 +14,17 @@ export default () => {
   const [controller, setController] = createSignal<AbortController>(null)
 
   const handleButtonClick = async () => {
-    const inputValue = inputRef.value
+    const inputValue = inputRef.value;
     if (!inputValue) {
-      return
+      return;
     }
     // @ts-ignore
-    if (window?.umami) umami.trackEvent('chat_generate')
-    inputRef.value = ''
+    if (window?.umami) umami.trackEvent("chat_generate");
+    inputRef.value = "";
     setMessageList([
       ...messageList(),
       {
-        role: 'user',
+        role: "user",
         content: inputValue,
       },
     ])
@@ -208,5 +208,5 @@ export default () => {
         </div>
       </Show>
     </div>
-  )
-}
+  );
+};
